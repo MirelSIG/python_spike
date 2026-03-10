@@ -1,75 +1,35 @@
-# Ejemplos de Objetos en Python
-# Objetos y programación orientada a objetos
+class Robot:
+    # Atributo de clase (para el Administrador/Classmethod)
+    total_robots = 0
 
-print("=== CLASES Y OBJETOS ===")
-class Vehiculo:
-    def __init__(self, marca, modelo, año):
-        self.marca = marca
-        self.modelo = modelo
-        self.año = año
-    
-    def describir(self):
-        return f"{self.marca} {self.modelo} ({self.año})"
+    # 1. EL PREPARADOR (init)
+    def __init__(self, nombre, version):
+        self.nombre = nombre    # Atributo de instancia
+        self.version = version  # Atributo de instancia
+        Robot.total_robots += 1
 
-auto = Vehiculo("Toyota", "Corolla", 2020)
-print(f"Objeto creado: {auto.describir()}")
-print(f"Marca: {auto.marca}")
-print(f"Modelo: {auto.modelo}")
-print(f"Año: {auto.año}")
+    # 2. EL LENTE (str) - Para que print() funcione bonito
+    def __str__(self):
+        return f" Robot: {self.nombre} (v{self.version})"
 
-print("\n=== MÉTODO len() EN OBJETOS ===")
-# len() funciona con cualquier objeto que implemente __len__
-class Inventario:
-    def __init__(self):
-        self.productos = []
-    
-    def agregar(self, producto):
-        self.productos.append(producto)
-    
-    def __len__(self):
-        return len(self.productos)
+    # 3. MÉTODO NORMAL (instancia) - Acciones del objeto
+    def saludar(self):
+        print(f"Hola, soy {self.nombre}. ¿En qué puedo ayudarte?")
 
-inventario = Inventario()
-inventario.agregar("Laptop")
-inventario.agregar("Mouse")
-inventario.agregar("Teclado")
-print(f"Productos en inventario: {len(inventario)}")
+    # 4. EL ADMINISTRADOR (classmethod) - Gestiona la "fábrica"
+    @classmethod
+    def cuantas_unidades(cls):
+        print(f"Se han fabricado {cls.total_robots} robots en total.")
 
-print("\n=== ATRIBUTOS Y MÉTODOS ===")
-class Calculadora:
-    def __init__(self):
-        self.resultado = 0
-    
-    def sumar(self, a, b):
-        self.resultado = a + b
-        return self.resultado
-    
-    def multiplicar(self, a, b):
-        self.resultado = a * b
-        return self.resultado
+    # 5. LA HERRAMIENTA (staticmethod) - Utilidad independiente
+    @staticmethod
+    def es_nombre_valido(nombre):
+        return len(nombre) > 2
 
-calc = Calculadora()
-print(f"5 + 3 = {calc.sumar(5, 3)}")
-print(f"4 * 7 = {calc.multiplicar(4, 7)}")
-print(f"Último resultado: {calc.resultado}")
+# --- PRUEBA DE TODO ---
+bot1 = Robot("R2D2", 1.0)
+bot2 = Robot("C3PO", 2.1)
 
-print("\n=== HERENCIA ===")
-class Animal:
-    def __init__(self, nombre):
-        self.nombre = nombre
-    
-    def hacer_sonido(self):
-        return "Algún sonido"
-
-class Perro(Animal):
-    def hacer_sonido(self):
-        return "Guau guau"
-
-class Gato(Animal):
-    def hacer_sonido(self):
-        return "Miau"
-
-perro = Perro("Max")
-gato = Gato("Luna")
-print(f"{perro.nombre} dice: {perro.hacer_sonido()}")
-print(f"{gato.nombre} dice: {gato.hacer_sonido()}")
+print(bot1)                # <--- Aquí usas el "LENTE" (__str__)
+bot1.saludar()             # <--- Método NORMAL
+Robot.cuantas_unidades()   # <--- Método de CLASE (el administrador)
