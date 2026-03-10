@@ -1,10 +1,14 @@
-# 🐍 Python Spike — Grupo 3
+#  Python Spike — Grupo 3
 
+En metodologías Ágiles/Scrum (Spike - Investigación), un Spike es un tipo de elemento de trabajo o historia de usuario orientada a la investigación, exploración, diseño o experimentación. 
+
+    Significado: Actividad breve para obtener aprendizaje necesario, reducir incertidumbre o probar una solución antes de comprometerse con ella.
+    Traducción/Uso: Se suele mantener el término en inglés ("hacer un spike") o traducirse como "investigación" o "experimento técnico".
 > **Bootcamp Desarrollo Web Fullstack · Peñascal – Somos F5**
 
 ---
 
-## 📌 Descripción
+## Descripción
 
 Este repositorio es un **fork** del proyecto original [python_investigacion](https://github.com/alvarezmarlen/python_investigacion) y ha sido adaptado como **Spike de investigación** por el **Grupo 3** del Bootcamp de Desarrollo Web Fullstack de **Peñascal – Somos F5**.
 
@@ -16,7 +20,7 @@ El resultado es una **aplicación web interactiva** que permite visualizar y eje
 
 ---
 
-## 👥 Integrantes y temáticas
+## Integrantes y temáticas
 
 | Integrante | Tema | Carpeta |
 |---|---|---|
@@ -26,7 +30,7 @@ El resultado es una **aplicación web interactiva** que permite visualizar y eje
 
 ---
 
-## 🎯 Objetivos del Spike
+## Objetivos del Spike
 
 1. Investigar y documentar con ejemplos ejecutables los principales **tipos de datos** de Python.
 2. Comprender la diferencia entre tipos **mutables** (listas, diccionarios) e **inmutables** (strings).
@@ -35,7 +39,7 @@ El resultado es una **aplicación web interactiva** que permite visualizar y eje
 
 ---
 
-## 🗂️ Estructura del proyecto
+## Estructura del proyecto
 
 ```
 python_spike/
@@ -75,9 +79,9 @@ python_spike/
 
 ---
 
-## 🧪 Contenido investigado
+## Contenido investigado
 
-### 📝 Strings (Mirel)
+### Strings (Mirel)
 Los strings son **inmutables**: ningún método modifica el original, siempre se devuelve uno nuevo.
 
 | Categoría | Métodos cubiertos |
@@ -89,7 +93,7 @@ Los strings son **inmutables**: ningún método modifica el original, siempre se
 
 ---
 
-### 📋 Listas (Mirel)
+### Listas (Mirel)
 Las listas son **mutables**: sus métodos modifican la estructura original.
 
 | Categoría | Métodos cubiertos |
@@ -102,7 +106,7 @@ Las listas son **mutables**: sus métodos modifican la estructura original.
 
 ---
 
-### 🧩 Objetos — POO (Luis)
+### Objetos — POO (Luis)
 Introducción a la **Programación Orientada a Objetos** en Python.
 
 | Concepto | Descripción |
@@ -115,7 +119,7 @@ Introducción a la **Programación Orientada a Objetos** en Python.
 
 ---
 
-### 📚 Diccionarios (Juan Carlos)
+### Diccionarios (Juan Carlos)
 Colecciones de pares **clave-valor**, mutables y sin orden garantizado en versiones antiguas (ordenados por inserción desde Python 3.7).
 
 | Categoría | Métodos cubiertos |
@@ -127,7 +131,7 @@ Colecciones de pares **clave-valor**, mutables y sin orden garantizado en versio
 
 ---
 
-## 🚀 Cómo ejecutar el proyecto
+## Cómo ejecutar el proyecto
 
 Al ser una aplicación web estática, los archivos `.py` se cargan mediante `fetch()` por lo que es necesario un servidor HTTP local:
 
@@ -145,7 +149,7 @@ npx serve .
 
 ---
 
-## ⚙️ Tecnologías utilizadas
+## Tecnologías utilizadas
 
 | Tecnología | Uso |
 |---|---|
@@ -157,7 +161,7 @@ npx serve .
 
 ---
 
-## 🔀 Fork y procedimiento de trabajo
+## Fork y procedimiento de trabajo
 
 1. **Fork** del repositorio [`alvarezmarlen/python_investigacion`](https://github.com/alvarezmarlen/python_investigacion) como base de la estructura.
 2. Cada integrante desarrolló su sección en su carpeta correspondiente (`MirelPY/`, `LuisPY/`, `JuanCarlosPY/`).
@@ -168,7 +172,7 @@ npx serve .
 
 ---
 
-## 📖 Contexto académico
+## Contexto académico
 
 | | |
 |---|---|
