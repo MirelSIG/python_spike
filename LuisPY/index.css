@@ -1,40 +1,41 @@
 /* Theme Variables mapping */
 :root {
-    --bg-color: #0f172a; /* Same as standard body implicitly */
-    --text-color: #f8fafc;
-    --editor-bg: #0f172a;
-    --editor-text: #38bdf8;
-    --terminal-bg: #1e1e1e;
-    --terminal-text: #d4d4d4;
-    --terminal-border: #333;
-    --terminal-header-start: #444;
-    --terminal-header-end: #333;
-    --terminal-cmd: #569cd6;
-    --terminal-path: #4af626;
+    --bg-color: #ffffff;
+    --text-color: #1e293b;
+    --accent-color: #ff1493; /* Deep Pink */
+    --accent-hover: #db0073;
+    --editor-bg: #1e293b;
+    --editor-text: #f8fafc;
+    --terminal-bg: #0f172a;
+    --terminal-text: #e2e8f0;
+    --terminal-border: #334155;
+    --terminal-header-start: #334155;
+    --terminal-header-end: #1e293b;
+    --terminal-cmd: #ff69b4; /* Hot Pink */
+    --terminal-path: #f472b6;
     --terminal-user: #cbd5e1;
-    --terminal-res: #cecece;
-    --terminal-cursor: #d4d4d4;
-    --terminal-title: #999;
+    --terminal-res: #cbd5e1;
+    --terminal-cursor: #ff69b4;
+    --terminal-title: #94a3b8;
     --terminal-running: #fbbf24;
 }
 
 #light-mode:checked ~ * {
-    --bg-color: #f1f5f9;
+    --bg-color: #f8fafc; /* Light slate background */
     --text-color: #0f172a;
-    --editor-bg: #f1f5f9;
-    --editor-text: #0f172a;
-    --terminal-bg: #ffffff;
+    --editor-bg: #ffffff;
+    --editor-text: #1e293b;
+    --terminal-bg: #f1f5f9;
     --terminal-text: #334155;
-    --terminal-border: #94a3b8;
+    --terminal-border: #cbd5e1;
     --terminal-header-start: #e2e8f0;
     --terminal-header-end: #cbd5e1;
-    --terminal-cmd: #0366d6;
-    --terminal-path: #22863a;
-    --terminal-user: #334155;
-    --terminal-res: #334155;
-    --terminal-cursor: #334155;
-    --terminal-title: #475569;
-    --terminal-running: #d97706;
+    --terminal-cmd: #db0073;
+    --terminal-path: #d946ef;
+    --terminal-user: #475569;
+    --terminal-res: #475569;
+    --terminal-cursor: #db0073;
+    --terminal-title: #64748b;
 }
 
 body {
@@ -50,14 +51,14 @@ body {
     justify-content: center;
     min-height: calc(100vh - 80px);
     height: auto;
-    background: radial-gradient(circle at center, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle at center, rgba(255, 20, 147, 0.05) 0%, transparent 70%);
     text-align: center;
     padding: 2rem;
 }
 .hero h1 {
     font-size: 5rem;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #10b981, #14b8a6);
+    background: linear-gradient(135deg, #ff1493, #ff69b4);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -65,7 +66,7 @@ body {
 }
 .hero p {
     font-size: 1.5rem;
-    color: #cbd5e1;
+    color: #475569;
     max-width: 600px;
     line-height: 1.6;
     animation: fadeInUp 1s ease-out 0.3s forwards;
@@ -81,12 +82,12 @@ body {
 }
 .card {
     position: relative;
-    background: rgba(30, 41, 59, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 20, 147, 0.1);
     border-radius: 24px;
     padding: 2.5rem;
     backdrop-filter: blur(10px);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 25px 50px -12px rgba(255, 20, 147, 0.1);
     animation: fadeIn 1s ease-out 0.6s forwards;
     opacity: 0;
     max-width: 1600px;
@@ -167,12 +168,12 @@ body {
     max-width: 100%;
 }
 .terminal-container h2 {
-    color: #fff;
+    color: #1e293b;
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
 }
 .terminal-container h3 {
-    color: #10b981;
+    color: #ff1493;
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
     font-weight: normal;
@@ -197,10 +198,10 @@ body {
     text-decoration: none;
     display: inline-block;
 }
-.btn-run { background: #10b981; }
-.btn-run:hover { background: #059669; transform: translateY(-1px); }
-.btn-clear { background: #334155; }
-.btn-clear:hover { background: #1e293b; transform: translateY(-1px); }
+.btn-run { background: #ff1493; }
+.btn-run:hover { background: #db0073; transform: translateY(-1px); }
+.btn-clear { background: #64748b; }
+.btn-clear:hover { background: #475569; transform: translateY(-1px); }
 
 .real-terminal-wrapper {
     background-color: var(--terminal-bg);

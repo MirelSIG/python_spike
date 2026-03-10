@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juan Carlos - Perfil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Mismo CSS para el NavBar -->
     <link rel="stylesheet" href="../Navbar/index.css">
     <link rel="stylesheet" href="index.css">
+    <style>
+        body, .btn-terminal, .nav-button, .theme-dropdown .btn-theme {
+            font-family: 'Outfit', sans-serif !important;
+        }
+    </style>
 </head>
 <body>
     <input type="radio" name="theme" id="dark-mode" checked style="display:none;">
@@ -28,10 +36,10 @@
                 <h2>Diccionarios en Python</h2>
                 <h3 id="example-title">Ejemplo: Métodos de <code>Diccionarios</code> en Python</h3>
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
-                    <p style="color: #cbd5e1; font-size: 0.95rem; margin: 0;">Edita el código aquí mismo antes de ejecutarlo:</p>
+                    <p style="color: #000000; font-size: 0.95rem; margin: 0;">Edita el código aquí mismo antes de ejecutarlo:</p>
                     <div class="theme-dropdown" style="position: relative; top: auto; right: auto;">
                         <input type="checkbox" id="theme-toggle" style="display:none;">
-                        <label class="btn-theme" for="theme-toggle">Tema ▼</label>
+                        <label class="btn-theme" for="theme-toggle">Tema</label>
                         <div id="theme-menu" class="theme-menu-content">
                             <label for="dark-mode">Modo oscuro</label>
                             <label for="light-mode">Modo claro</label>
@@ -62,9 +70,9 @@
                 </div>
 
                 <div class="terminal-buttons" style="margin-top: 1.5rem;">
-                    <a class="btn-terminal btn-run" href="javascript:void(0)" onclick="ejecutarCodigo()" id="btn-run">▶ Ejecutar script</a>
-                    <a class="btn-terminal btn-clear" href="javascript:void(0);" onclick="limpiarTerminal()">🗑 Limpiar</a>
-                    <a class="btn-terminal" style="background: #3b82f6;" href="javascript:void(0);" onclick="recargarCodigo()">🔄 Restaurar archivo original</a>
+                    <a class="btn-terminal btn-run" href="javascript:void(0)" onclick="ejecutarCodigo()" id="btn-run">Ejecutar script</a>
+                    <a class="btn-terminal btn-clear" href="javascript:void(0);" onclick="limpiarTerminal()">Limpiar</a>
+                    <a class="btn-terminal" style="background: #3b82f6;" href="javascript:void(0);" onclick="recargarCodigo()">Restaurar archivo original</a>
                 </div>
             </div>
             

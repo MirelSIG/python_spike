@@ -70,12 +70,12 @@ body {
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #3b82f6, #8b5cf6); /* Gradiente azul a violeta */
+    background: linear-gradient(90deg, #ff1493, #8b5cf6); /* Gradiente rosa a violeta */
     transition: width 0.3s ease;
 }
 
 .nav-button:hover::after {
-    width: 70%;
+    width: 80%;
 }
 
 /* Estado activo del botón */
