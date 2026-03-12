@@ -1,4 +1,4 @@
-#  Python Spike — Grupo 3
+#  Python Spike — Grupo C
 
 En metodologías Ágiles/Scrum (Spike - Investigación), un Spike es un tipo de elemento de trabajo o historia de usuario orientada a la investigación, exploración, diseño o experimentación. 
 
@@ -131,6 +131,153 @@ Colecciones de pares **clave-valor**, mutables y sin orden garantizado en versio
 
 ---
 
+### Pathlib
+
+#### Por que la libreria pathlib
+
+Durante muchos años, Python manejó rutas de archivos usando cadenas de texto y funciones sueltas del módulo `os` y `os.path`. Esto generaba varios problemas:
+
+- Las rutas eran *strings*, no objetos → difícil de manipular.
+- Había que preocuparse por las diferencias entre sistemas (Windows: `C:\Users\...`, Linux/Mac: `/home/...`).
+- Muchas operaciones eran verbosas: `os.path.join(os.path.dirname(path), "archivo.txt")`
+
+Para resolver esto, Python introdujo `pathlib` (desde Python 3.4), un módulo que convierte las rutas en **objetos inteligentes**, fáciles de combinar, manipular y usar.
+
+#### Concepto fundamental: una ruta como un objeto
+
+`pathlib` introduce la clase `Path`, que representa una ruta como un objeto con métodos y propiedades:
+
+```python
+from pathlib import Path
+
+ruta = Path("carpeta/archivo.txt")
+```
+
+Este objeto sabe si existe, si es archivo o carpeta, permite navegar por el sistema de archivos, leer y escribir archivos, y se comporta igual en Windows, Linux y Mac.
+
+#### Uso basico
+
+**Crear rutas**
+
+```python
+from pathlib import Path
+
+p = Path("carpeta") / "subcarpeta" / "archivo.txt"
+```
+
+El operador `/` se sobrecarga para unir rutas, lo que resulta mucho más legible.
+
+**Comprobar existencia**
+
+```python
+p.exists()
+p.is_file()
+p.is_dir()
+```
+
+**Crear carpetas**
+
+```python
+Path("nueva/carpeta").mkdir(parents=True, exist_ok=True)
+```
+
+**Leer y escribir archivos**
+
+```python
+contenido = Path("notas.txt").read_text()
+Path("salida.txt").write_text("Hola, mundo")
+```
+
+#### Nivel intermedio: navegar y manipular rutas
+
+**Listar archivos de un directorio**
+
+```python
+for archivo in Path("carpeta").iterdir():
+    print(archivo)
+```
+
+**Buscar archivos por patron**
+
+```python
+for txt in Path(".").glob("*.txt"):
+    print(txt)
+```
+
+**Obtener partes de la ruta**
+
+```python
+p = Path("/home/mirel/proyecto/main.py")
+p.name    # 'main.py'
+p.stem    # 'main'
+p.suffix  # '.py'
+p.parent  # '/home/mirel/proyecto'
+p.parts   # ('/', 'home', 'mirel', 'proyecto', 'main.py')
+```
+
+#### Nivel avanzado: operaciones complejas y buenas practicas
+
+**Rutas absolutas y relativas**
+
+```python
+p.resolve()                    # Convierte a ruta absoluta real
+p.relative_to("/home/mirel")
+```
+
+**Eliminar archivos y carpetas**
+
+```python
+Path("archivo.txt").unlink()  # Borrar archivo
+Path("carpeta").rmdir()       # Borrar carpeta vacia
+```
+
+**Lectura y escritura binaria**
+
+```python
+data = Path("imagen.png").read_bytes()
+Path("copia.png").write_bytes(data)
+```
+
+**Integracion con otras librerias**
+
+Muchas librerias modernas aceptan objetos `Path` directamente:
+
+```python
+import pandas as pd
+
+df = pd.read_csv(Path("datos.csv"))
+```
+
+También funcionan con `open()`, `shutil.copy()`, `matplotlib`, `json`, `csv`, entre otras.
+
+#### Comparacion: pathlib vs os.path
+
+| Aspecto | pathlib | os.path |
+|---|---|---|
+| **Paradigma** | Orientado a objetos | Funciones procedimentales |
+| **Tipo de dato** | Objetos `Path` | Cadenas de texto (`str`) |
+| **Legibilidad** | Muy alta | Media |
+| **Portabilidad** | Automatica (Windows/Linux/Mac) | Manual (hay que tener cuidado) |
+| **Concatenacion de rutas** | Operador `/` | `os.path.join()` |
+| **Moderno** | Si, recomendado | Antiguo, legado |
+| **Compatibilidad** | Excelente con librerias modernas | Aun funciona, pero menos elegante |
+
+**Cuando usar pathlib:**
+- En proyectos nuevos
+- Cuando se quiere código limpio y moderno
+- Al trabajar con muchas rutas
+- Cuando se necesita portabilidad
+
+**Cuando usar os.path:**
+- Al mantener código antiguo
+- Cuando una librería antigua solo acepta strings
+
+#### Conclusion
+
+`pathlib` es la evolución natural y moderna del manejo de rutas en Python. Ofrece más legibilidad, menos errores, código más corto, portabilidad automática y métodos integrados para leer, escribir y manipular archivos. `os.path` sigue siendo funcional, pero pertenece a una era anterior del lenguaje.
+
+---
+
 ## Cómo ejecutar el proyecto
 
 Al ser una aplicación web estática, los archivos `.py` se cargan mediante `fetch()` por lo que es necesario un servidor HTTP local:
@@ -178,9 +325,9 @@ npx serve .
 |---|---|
 | **Programa** | Bootcamp Desarrollo Web Fullstack |
 | **Centro** | Peñascal – Somos F5 |
-| **Equipo** | Grupo 3 |
+| **Equipo** | Grupo C |
 | **Tipo de tarea** | Spike de investigación técnica |
-| **Tema** | Manipulación de tipos de datos en Python |
+| **Tema** | Manipulación de tipos de datos en Python y pathlib |
 | **Fecha** | Marzo 2026 |
 
 ---
